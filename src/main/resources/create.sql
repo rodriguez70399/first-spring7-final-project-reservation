@@ -4,8 +4,5 @@ CREATE TABLE `reservations` (
   `clientDni` varchar(9) NOT NULL,
   `hotelId` bigint NOT NULL,
   `flightId` bigint NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `clientDni_UNIQUE` (`clientDni`),
-  UNIQUE KEY `hotelId_UNIQUE` (`hotelId`),
-  UNIQUE KEY `flightId_UNIQUE` (`flightId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

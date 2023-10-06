@@ -67,12 +67,6 @@ public class ReservationController
     public ResponseEntity<?> getAvailableReservation(@PathVariable String name)
     {
         Hotel hotel = this.hotelService.findByName(name);
-
-        if (hotel == null) 
-        {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("The hotel is not available or does not exist.");            
-        }
-
         return ResponseEntity.ok(this.reservationService.findByHotelId(hotel.getId()));
     }
 }

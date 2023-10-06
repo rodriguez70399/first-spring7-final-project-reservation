@@ -25,7 +25,6 @@ public class HotelServiceInterfaceImplemented implements HotelServiceInterface
 
     /**
      * {@inheritDoc}
-     * 
      */
     @Override
     public List<Hotel> findByAvailable() 
