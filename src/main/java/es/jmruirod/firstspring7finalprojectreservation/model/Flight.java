@@ -3,29 +3,15 @@ package es.jmruirod.firstspring7finalprojectreservation.model;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
-
 /**
  * Clase que representa un vuelo en el sistema.
  * 
  * @author Jose Manuel Ruiz Rodriguez
  */
-@Entity
-@Table(name = "flights")
 public class Flight 
 {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String company;
-
-    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime date;
     private double price;
     private int availableSeats;

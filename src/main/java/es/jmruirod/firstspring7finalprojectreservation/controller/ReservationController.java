@@ -20,6 +20,11 @@ import es.jmruirod.firstspring7finalprojectreservation.service.FlightServiceInte
 import es.jmruirod.firstspring7finalprojectreservation.service.HotelServiceInterface;
 import es.jmruirod.firstspring7finalprojectreservation.service.ReservationServiceInterface;
 
+/**
+ * Controlador REST para gestionar reservas de hoteles y vuelos.
+ * 
+ * @author Jose Manuel Ruiz Rodriguez
+ */
 @RestController
 public class ReservationController 
 {
@@ -32,6 +37,12 @@ public class ReservationController
     @Autowired
     private FlightServiceInterface flightService;
 
+    /**
+     * Crea una nueva reserva de hotel y vuelo a partir de la información proporcionada.
+     *
+     * @param temporalReservation La información temporal de la reserva (TemporalReservation).
+     * @return ResponseEntity con un mensaje que indica si la reserva se realizó con éxito.
+     */
     @PostMapping(value = "reservation", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> create(@RequestBody TemporalReservation temporalReservation)
     {
@@ -63,6 +74,12 @@ public class ReservationController
         return ResponseEntity.ok("Reservation made successfully.");
     }
 
+    /**
+     * Obtiene las reservas disponibles para un hotel específico por nombre.
+     *
+     * @param name El nombre del hotel para el cual se desean obtener las reservas.
+     * @return ResponseEntity con la lista de reservas disponibles para el hotel.
+     */
     @GetMapping(value = "reservation/hotel/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getAvailableReservation(@PathVariable String name)
     {
